@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"sourceMap": true,
+		"module": "esnext",
+		"lib": ["dom", "ESNext"],
+		"esModuleInterop": true,
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"incremental": true,
+		"strictNullChecks": true
+	},
+	"include": ["./src"],
+	"exclude": ["./dist"]
+}
