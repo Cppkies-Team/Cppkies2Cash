@@ -94,3 +94,5 @@ declare var toLoad: string[]
 declare var loader: Loader
 
 declare var pic: Loader["assets"]
+
+/* eslint-enable no-var */

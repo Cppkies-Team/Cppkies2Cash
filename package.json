@@ -12,8 +12,9 @@
 		"watch": "echo {\\\"prod\\\":false} > isprod.json && export NODE_ENV=\"development\"&&npm run build -- --watch",
 		"eslint": "npx eslint ./src/**/*.ts ./src/*.ts ./*.js",
 		"eslint:fix": "npm run eslint -- --fix",
-		"build-dts": "npx dts-bundle-generator src/index.ts -o dist/index.d.ts",
-		"watch-esm": "echo {\\\"prod\\\":false} > isprod.json && export NODE_ENV=\"development\" CPPKIES_ESM_DEBUGGING=\"yes\" && npm run build -- --watch"
+		"build-dts": "npx dts-bundle-generator src/index.ts -o dist/index.d.ts && npm run injectTypings",
+		"watch-esm": "echo {\\\"prod\\\":false} > isprod.json && export NODE_ENV=\"development\" CPPKIES_ESM_DEBUGGING=\"yes\" && npm run build -- --watch",
+		"injectTypings": "cat src/typings.d.ts >> dist/index.d.ts"
 	},
 	"husky": {
 		"hooks": {

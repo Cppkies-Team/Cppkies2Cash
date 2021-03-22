@@ -17,10 +17,11 @@ export function createHooks(hooks: Hooks): Hooks {
 	// @ts-expect-error Typescript doesn't like assigning to global classes
 	Coin = injectCode(
 		Coin,
-		"trail=0",
-		'trail=__C2C_INTERNAL__.hooks.emit("trail", 0)',
+		"trail=1",
+		'trail=__C2C_INTERNAL__.hooks.emit("trail", 1)',
 		"replace"
 	)
+	window.__C2C_INTERNAL__ = { hooks }
 	return hooks
 }
 
