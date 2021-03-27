@@ -4,6 +4,9 @@ import { injectCodes } from "./helpers"
 type Hooks = ReturnableEventEmitter<{
 	trail: [number, number]
 	coinImageResolve: [HTMLImageElement, HTMLImageElement]
+	coin: [Coin, void]
+	stream: [number, number]
+	coinLogic: [Coin, void]
 }>
 
 declare global {
@@ -23,6 +26,20 @@ export function createHooks(hooks: Hooks): Hooks {
 			"pic['coin3.png']",
 			"__C2C_INTERNAL__.hooks.emit(\"coinImageResolve\", pic['coin3.png'])",
 			"replace",
+		],
+		[null, ';\n__C2C_INTERNAL__.hooks.constEmit("coin", this)', "after"],
+		[
+			"if (this.y>windowH+200) Coins.splice(Coins.indexOf(this),1)",
+			'__C2C_INTERNAL__.hooks.constEmit("coinLogic", this);\n',
+			"before",
+		],
+	])
+	// @ts-expect-error Typescript doesn't like assigning to global functions
+	loop = injectCodes(loop, [
+		[
+			"stream+=(streamT-stream)*0.005;",
+			'streamT = __C2C_INTERNAL__.hooks.emit("stream", streamT);\n',
+			"before",
 		],
 	])
 	window.__C2C_INTERNAL__ = { hooks }
