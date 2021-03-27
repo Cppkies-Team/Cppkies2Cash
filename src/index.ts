@@ -6,4 +6,4 @@ import hooks, { createHooks } from "./hooks"
 
 createHooks(hooks)
 
-export { default as hooks } from "./hooks"
+export { default as hooks, on } from "./hooks"
