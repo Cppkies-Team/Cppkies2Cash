@@ -1,6 +1,6 @@
 {
 	"name": "cppkies2cash",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Cppkies2Cash is a modding framework for the toy app Cookies2Cash. It intends to make modding the app very simple.",
 	"main": "./dist/index.js",
 	"module": "./dist/esm/index.js",
