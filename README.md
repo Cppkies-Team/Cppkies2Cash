@@ -17,7 +17,7 @@ Cppkies2Cash is a modding framework for the toy app [Cppkies2Cash](https://ortei
 
 ## Documentation
 
-The documentation is located [here](https://cppkies2cash.js.org/#).
+The documentation is located [here](https://cppkies-team.github.io/Cppkies2Cash/#/).
 
 ## Examples
 
