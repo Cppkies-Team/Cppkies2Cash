@@ -1,5 +1,5 @@
 import { ReturnableEventEmitter } from "./lib/eventemitter"
-import { injectCodes } from "./helpers"
+import { injectCodes, injectCode } from "./helpers"
 
 type Hooks = ReturnableEventEmitter<{
 	trail: [number, number]
@@ -7,6 +7,7 @@ type Hooks = ReturnableEventEmitter<{
 	coin: [Coin, void]
 	stream: [number, number]
 	coinLogic: [Coin, void]
+	exchangeRate: [number, number]
 }>
 
 declare global {
@@ -42,6 +43,13 @@ export function createHooks(hooks: Hooks): Hooks {
 			"before",
 		],
 	])
+	// @ts-expect-error Typescript doesn't like assigning to global functions
+	redeem = injectCode(
+		redeem,
+		"0.08",
+		'__C2C_INTERNAL__.hooks.emit("exchangeRate", 0.08)',
+		"replace"
+	)
 	window.__C2C_INTERNAL__ = { hooks }
 	return hooks
 }

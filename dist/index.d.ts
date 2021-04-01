@@ -88,6 +88,10 @@ export declare type Hooks = ReturnableEventEmitter<{
 		Coin,
 		void
 	];
+	exchangeRate: [
+		number,
+		number
+	];
 }>;
 export declare const hooks: Hooks;
 export declare const on: any;
