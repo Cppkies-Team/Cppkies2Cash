@@ -13,7 +13,7 @@
 
 ## What is Cppkies2Cash
 
-Cppkies2Cash is a modding framework for the toy app [Cppkies2Cash](https://orteil.dashnet.org/cookies2cash/). It intends to make modding the app very simple.
+Cppkies2Cash is a modding framework for the toy app [Cookies2Cash](https://orteil.dashnet.org/cookies2cash/). It intends to make modding the app very simple.
 
 ## Examples
 
